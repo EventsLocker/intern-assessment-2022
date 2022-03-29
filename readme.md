@@ -1,4 +1,4 @@
-# EventHub QA Engineer Take-Home Assessment
+# EventHub Intern Engineer Take-Home Assessment
 
 Here we have a simple ToDo app, but a few things are broken or not quite right. Please complete the following tasks:
 
