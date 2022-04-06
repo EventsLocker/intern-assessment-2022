@@ -88,7 +88,11 @@ var app = app || {};
 							checked={this.props.todo.completed}
 							onChange={this.props.onToggle}
 						/>
-						<label>
+						{/*This allows the user to edit an item with a double click*/}
+						<label onDoubleClick={()=>{
+							this.handleEdit();
+						}
+						}>
 							{this.props.todo.title}
 						</label>
 						<button className="destroy" onClick={this.props.onDestroy} />
