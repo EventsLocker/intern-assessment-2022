@@ -43,6 +43,8 @@ var app = app || {};
 			if (event.keyCode !== ENTER_KEY) {
 				return;
 			}
+			//display footer after first enter key
+			document.getElementsByClassName('footer')[0].style.display = 'block';
 
 			event.preventDefault();
 
@@ -88,7 +90,16 @@ var app = app || {};
 			var todos = this.props.model.todos;
 
 			var shownTodos = todos.filter(function (todo) {
-				return todo
+				//display list based on completion status
+				switch (this.state.nowShowing) {
+					case app.ACTIVE_TODOS:
+						return !todo.completed;
+					case app.COMPLETED_TODOS:
+						return todo.completed;
+					default:
+						return true;
+				}
+
 			}, this);
 
 			var todoItems = shownTodos.map(function (todo) {
@@ -133,8 +144,9 @@ var app = app || {};
 						<label
 							htmlFor="toggle-all"
 						/>
+						{/*show new items at bottom of list*/}
 						<ul className="todo-list">
-							{todoItems}
+							{todoItems.reverse()}
 						</ul>
 					</section>
 				);
