@@ -91,11 +91,12 @@ var app = app || {};
 						<label>
 							{this.props.todo.title}
 						</label>
-						<button className="destroy" onClick={this.props.onDestroy} />
+						<button className="destroy" onClick={this.props.onDestroy}/>
 					</div>
-					<input
+					<input		
 						ref="editField"
 						className="edit"
+						type="text"
 						value={this.state.editText}
 						onBlur={this.handleSubmit}
 						onChange={this.handleChange}

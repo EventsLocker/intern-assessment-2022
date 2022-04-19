@@ -42,7 +42,7 @@ body {
 }
 
 .todoapp {
-	background: #fff;
+	background: rgb(244, 239, 198);
 	margin: 130px 0 40px 0;
 	position: relative;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
@@ -104,6 +104,7 @@ body {
 }
 
 .main {
+	background: rgb(244, 239, 198);
 	position: relative;
 	z-index: 2;
 	border-top: 1px solid #e6e6e6;
@@ -150,7 +151,7 @@ body {
 .todo-list li {
 	position: relative;
 	font-size: 24px;
-	border-bottom: 1px solid #ededed;
+	border-bottom: 1px solid #35a45e;
 }
 
 .todo-list li:last-child {
@@ -272,9 +273,9 @@ body {
 	height: 50px;
 	overflow: hidden;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
-	            0 8px 0 -3px #f6f6f6,
+	            0 8px 0 -3px rgb(244, 239, 198),
 	            0 9px 1px -3px rgba(0, 0, 0, 0.2),
-	            0 16px 0 -6px #f6f6f6,
+	            0 16px 0 -6px rgb(244, 239, 198),
 	            0 17px 2px -6px rgba(0, 0, 0, 0.2);
 }
 

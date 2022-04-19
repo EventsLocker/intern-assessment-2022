@@ -79,6 +79,12 @@ var app = app || {};
 		this.inform();
 	};
 
-	app.TodoModel.prototype.clearCompleted = function() {}
+	app.TodoModel.prototype.clearCompleted = function() {
+		this.todos = this.todos.filter(function (candidate) {
+			return !candidate.completed;
+		});
+
+		this.inform();
+	}
 
 })();

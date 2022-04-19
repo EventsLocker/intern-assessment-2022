@@ -87,9 +87,21 @@ var app = app || {};
 			var main;
 			var todos = this.props.model.todos;
 
-			var shownTodos = todos.filter(function (todo) {
-				return todo
-			}, this);
+			var nowShowing = this.state.nowShowing;
+			var shownTodos = null;
+			if (nowShowing === app.ACTIVE_TODOS) {
+				shownTodos = todos.filter(function (todo) {
+					return !todo.completed;
+				}, this);
+			}
+			else if (nowShowing === app.COMPLETED_TODOS) {
+				shownTodos = todos.filter(function (todo) {
+					return todo.completed;
+				}, this);
+			}
+			else {
+				shownTodos = todos;
+			}
 
 			var todoItems = shownTodos.map(function (todo) {
 				return (
